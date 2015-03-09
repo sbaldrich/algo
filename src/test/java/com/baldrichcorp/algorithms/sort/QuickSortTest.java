@@ -26,21 +26,4 @@ public class QuickSortTest {
 		assertTrue(Arrays.equals(shuffled, sorted));
 	}
 
-
-	@Test
-	public void testSortAndComparisons() throws Exception {
-		BufferedReader reader = new BufferedReader(new FileReader(new File(
-				"IntegerArrayA.txt")));
-		ArrayList<Integer> list = new ArrayList<>();
-		String num;
-		while ((num = reader.readLine()) != null) {
-			list.add(Integer.parseInt(num));
-		}
-		int[] array = new int[list.size()];
-		for (int i = 0; i < array.length; i++)
-			array[i] = list.get(i);
-		QuickSort sorter = new QuickSort();
-		sorter.sort(array);
-		System.out.println(sorter.getComparisons());
-	}
 }

@@ -1,11 +1,21 @@
 package com.baldrichcorp.algorithms.sort;
 
+/**
+ * QuickSort algorithm => O(nlogn)
+ * 
+ * Divide and conquer algorithm based on the Partition subroutine. It basically
+ * chooses a pivot, stores it on the first position of the sub-array and "partitions"
+ * the remainder of the array in way such that all elements less than (or equal) to 
+ * the pivot appear before those that are greater than it. It is superior to MergeSort
+ * because it works in-place and is much cooler and all the girls want to hang out with it.
+ * 
+ * @author sbaldrich
+ *
+ */
 public class QuickSort{
 	private int[] array;
-	private int comparisons = 0;
 
 	public void sort(int[] array){
-		comparisons = 0;
 		this.array = array;
 		qs(0,array.length-1);
 	}
@@ -13,13 +23,17 @@ public class QuickSort{
 	private void qs(int l, int r){
 		if(r<=l)
 			return;
-		comparisons += r-l;
 		pivot(l,r);
 		int p = partition(l,r);
 		qs(l,p-1);
 		qs(p+1,r);
 	}
 
+	/*
+	 * The pivot can be chosen in a variety of different ways. This particular implementation
+	 * takes the median of the left-side, mid and right-side elements. A random selection would 
+	 * suffice as well. 
+	 */
 	private void pivot(int l, int r){
 		int x = array[l], y = array[(r-l)/2] , z = array[r], p = l;
 		if( (x <= y && y <= z) || (z <= y && y <= x))
@@ -48,7 +62,4 @@ public class QuickSort{
 		array[y] = z;	
 	}
 	
-	public int getComparisons(){
-		return comparisons;
-	}
 }

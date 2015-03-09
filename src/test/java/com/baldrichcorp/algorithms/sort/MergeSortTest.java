@@ -1,17 +1,10 @@
 package com.baldrichcorp.algorithms.sort;
 
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.testng.annotations.Test;
-
-import com.baldrichcorp.algorithms.sort.MergeSort;
 public class MergeSortTest {
 
 	@Test
@@ -25,28 +18,4 @@ public class MergeSortTest {
 		assertTrue(Arrays.equals(shuffled, sorted));
 	}
 	
-	@Test
-	public void testInversions(){
-		int[] shuffled = new int[]{1,2,3};
-		MergeSort sorter = new MergeSort();
-		sorter.sort(shuffled);
-		assertEquals(sorter.getInversions(), 0);
-	}
-	
-	@Test
-	public void testSortAndInversions() throws Exception{
-		BufferedReader reader = new BufferedReader
-				(new FileReader( new File ("IntegerArray.txt")));
-		ArrayList<Integer> list = new ArrayList<>();
-		String num;
-		while( (num = reader.readLine()) != null ){
-			list.add(Integer.parseInt(num));
-		}
-		int[] array = new int[list.size()];
-		for(int i=0; i < array.length; i++)
-			array[i] = list.get(i);
-		MergeSort sorter = new MergeSort();
-		sorter.sort(array);
-		System.out.println(sorter.getInversions());
-	}
 }

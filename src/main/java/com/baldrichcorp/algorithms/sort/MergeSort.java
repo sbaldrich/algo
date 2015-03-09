@@ -1,32 +1,31 @@
 package com.baldrichcorp.algorithms.sort;
 
+/**
+ * MergeSort algorithm => O(nlogn)
+ * 
+ * A divide and conquer algorithm supported in two main operations: sorting a sub-array 
+ * and merging two sorted sub-arrays.
+ * 
+ * @author sbaldrich
+ *
+ */
 
 public class MergeSort{
 	private int[] array;
-	private long inv = -1;
 	
 	public void sort(int[] array){
 		this.array = array;
 		int n = array.length;
-		inv = 0;
 		msort(0,n-1);
 	}
 	
-	/**
-	 * Returns the number of inversions from the last sort.
-	 * @return 
-	 */
-	public long getInversions(){
-		return inv;
-	}
-
-	private void msort(int l, int r){
-		if(l == r)
+	private void msort(int left, int right){
+		if(left == right)
 			return;
-		int n = r - l;
-		msort(l,l + n/2);
-		msort(l + n/2 + 1, r);
-		merge(l, l + n/2 ,l + n/2 + 1, r);
+		int n = right - left;
+		msort(left,left + n/2);
+		msort(left + n/2 + 1, right);
+		merge(left, left + n/2 ,left + n/2 + 1, right);
 	}
 
 	private void merge(int l1, int r1, int l2, int r2){
@@ -35,10 +34,8 @@ public class MergeSort{
 		while(li <= r1 && ri <= r2){
 			if(array[li] <= array[ri])
 				aux[ci] = array[li++];
-			else{
+			else
 				aux[ci] = array[ri++];
-				inv += r1 - li + 1;
-			}
 			ci++;
 		}
 		while(li<=r1)

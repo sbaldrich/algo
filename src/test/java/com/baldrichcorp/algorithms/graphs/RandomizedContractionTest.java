@@ -1,4 +1,4 @@
-package com.baldrichcorp.googletraining.graphs;
+package com.baldrichcorp.algorithms.graphs;
 
 import static org.testng.Assert.assertTrue;
 
@@ -10,7 +10,7 @@ import java.util.Random;
 
 import org.testng.annotations.Test;
 
-import com.baldrichcorp.googletraining.graphs.RandomizedContraction.Graph;
+import com.baldrichcorp.algorithms.graphs.RandomizedContraction.Graph;
 
 
 public class RandomizedContractionTest {

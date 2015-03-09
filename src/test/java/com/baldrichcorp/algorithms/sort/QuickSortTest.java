@@ -1,4 +1,4 @@
-package com.baldrichcorp.googletraining.sort;
+package com.baldrichcorp.algorithms.sort;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.testng.annotations.Test;
+
+import com.baldrichcorp.algorithms.sort.QuickSort;
 
 public class QuickSortTest {
 

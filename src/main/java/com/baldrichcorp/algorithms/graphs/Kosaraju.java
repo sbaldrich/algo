@@ -1,4 +1,4 @@
-package com.baldrichcorp.googletraining.graphs;
+package com.baldrichcorp.algorithms.graphs;
 
 import java.io.BufferedReader;
 import java.io.File;

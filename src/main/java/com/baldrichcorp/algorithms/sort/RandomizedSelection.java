@@ -1,4 +1,4 @@
-package com.baldrichcorp.googletraining.sort;
+package com.baldrichcorp.algorithms.sort;
 
 import java.util.Arrays;
 import java.util.Random;

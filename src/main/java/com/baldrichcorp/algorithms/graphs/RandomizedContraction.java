@@ -1,4 +1,4 @@
-package com.baldrichcorp.googletraining.graphs;
+package com.baldrichcorp.algorithms.graphs;
 
 import java.util.ArrayList;
 import java.util.Collections;

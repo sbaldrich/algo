@@ -34,7 +34,7 @@ public class MergeSortTest {
 	@Test
 	public void testSortAndInversions() throws Exception{
 		BufferedReader reader = new BufferedReader
-				(new FileReader( new File ("D:\\santiago.vargas\\learning\\coursera\\week1\\IntegerArray.txt")));
+				(new FileReader( new File ("IntegerArray.txt")));
 		ArrayList<Integer> list = new ArrayList<>();
 		String num;
 		while( (num = reader.readLine()) != null ){

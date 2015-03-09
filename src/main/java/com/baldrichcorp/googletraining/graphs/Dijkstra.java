@@ -112,7 +112,7 @@ public class Dijkstra {
 	public static void main(String[] args) throws Exception{
 		Dijkstra d = new Dijkstra(201);
 		BufferedReader reader = new BufferedReader
-				(new FileReader( new File ("D:\\santiago.vargas\\learning\\coursera\\week5\\dijkstraData.txt")));
+				(new FileReader( new File ("dijkstraData.txt")));
 		String line = null;
 		while((line = reader.readLine()) != null){
 			String[] pars = line.split("\\s+"), edge;

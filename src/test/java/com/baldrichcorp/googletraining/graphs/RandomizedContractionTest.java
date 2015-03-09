@@ -67,7 +67,7 @@ public class RandomizedContractionTest {
 	@Test
 	public void randomizedContractionBigTest() throws Exception{
 		BufferedReader reader = new BufferedReader
-				(new FileReader( new File ("D:\\santiago.vargas\\learning\\coursera\\week3\\Graph.txt")));
+				(new FileReader( new File ("Graph.txt")));
 		Graph graph = new Graph();
 		String line;
 		while( (line = reader.readLine()) != null ){

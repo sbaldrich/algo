@@ -28,7 +28,7 @@ public class QuickSortTest {
 	@Test
 	public void testSortAndComparisons() throws Exception {
 		BufferedReader reader = new BufferedReader(new FileReader(new File(
-				"D:\\santiago.vargas\\learning\\coursera\\week2\\IntegerArrayA.txt")));
+				"IntegerArrayA.txt")));
 		ArrayList<Integer> list = new ArrayList<>();
 		String num;
 		while ((num = reader.readLine()) != null) {

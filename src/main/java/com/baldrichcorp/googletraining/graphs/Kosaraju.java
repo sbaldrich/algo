@@ -78,7 +78,7 @@ public class Kosaraju {
 	
 	public static void main(String[] args) throws Exception{
 		BufferedReader reader = new BufferedReader
-				(new FileReader( new File ("D:\\santiago.vargas\\learning\\coursera\\week4\\SCC.txt")));
+				(new FileReader( new File ("SCC.txt")));
 		String line = null;
 		while((line = reader.readLine()) != null ){
 			String pars[] = line.split("\\s+");

@@ -1,13 +1,17 @@
 package com.baldrichcorp.algorithms.graphs;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeSet;
 
-
+/**
+ * Implementation of Dijkstra's shortest path algorithm. => O(|E|log(|V|))
+ * A TreeSet is used as the Priority Queue so it is cool but not as cool as
+ * a raccoon smoking a cigarette while riding a motorcycle.
+ *   
+ * @author sbaldrich
+ *
+ */
 public class Dijkstra {
 	
 	private static final int oo = (int)1e6;
@@ -41,10 +45,6 @@ public class Dijkstra {
 			return cost - o.cost;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.lang.Object#hashCode()
-		 */
 		@Override
 		public int hashCode() {
 			final int prime = 31;
@@ -54,10 +54,6 @@ public class Dijkstra {
 			return result;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * @see java.lang.Object#equals(java.lang.Object)
-		 */
 		@Override
 		public boolean equals(Object obj) {
 			if (this == obj)
@@ -95,6 +91,7 @@ public class Dijkstra {
 		while(!priorityQueue.isEmpty() && proc < 200){
 			Node p = priorityQueue.first();
 			processed[p.index] = true;
+			proc++;
 			priorityQueue.remove(priorityQueue.first());
 			ArrayList<Node> out = graph.get(p.index);
 			for(Node q : out){
@@ -109,27 +106,4 @@ public class Dijkstra {
 		return d;
 	}
 	
-	public static void main(String[] args) throws Exception{
-		Dijkstra d = new Dijkstra(201);
-		BufferedReader reader = new BufferedReader
-				(new FileReader( new File ("dijkstraData.txt")));
-		String line = null;
-		while((line = reader.readLine()) != null){
-			String[] pars = line.split("\\s+"), edge;
-			int p = Integer.parseInt(pars[0]), q, c;
-			for(int i=1; i < pars.length; i++){
-				edge = pars[i].split(",");
-				q = Integer.parseInt(edge[0]);
-				c = Integer.parseInt(edge[1]);
-				d.connect(p, q, c);
-			}
-		}
-		int dijkstra[];
-		System.out.println(Arrays.toString(dijkstra = d.dijkstra(1)));
-		int ans[] = new int[]{7,37,59,82,99,115,133,165,188,197};
-		for(int i : ans)
-			System.out.println(dijkstra[i]);
-		
-		
-	}	
 }

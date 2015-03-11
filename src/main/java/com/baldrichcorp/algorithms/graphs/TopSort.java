@@ -3,6 +3,14 @@ package com.baldrichcorp.algorithms.graphs;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Topological sorting. => O(|E|+|V|)
+ * Given a DAG, return an ordering of the nodes such that for every
+ * edge u -> v, u appears before than v in the ordering.
+ *  
+ * @author sbaldrich
+ *
+ */
 public class TopSort {
 	
 	ArrayList<ArrayList<Integer>> graph = new ArrayList<>();

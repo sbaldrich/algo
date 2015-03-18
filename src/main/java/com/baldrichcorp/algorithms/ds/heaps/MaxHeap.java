@@ -1,9 +1,8 @@
 package com.baldrichcorp.algorithms.ds.heaps;
 
-import java.util.Arrays;
 
 /**
- * Implementation of a Max-priority queue using a heap. 
+ * Implementation of a (max) priority queue using a heap. 
  * 
  * @author sbaldrich
  */
@@ -16,7 +15,7 @@ public class MaxHeap<T extends Comparable<? super T>> implements MaxPriorityQueu
 	public MaxHeap(int initialCapacity){
 		if(initialCapacity <= 0)
 			throw new IllegalArgumentException("Size must be non-negative");
-		heap = (T[]) new Comparable[initialCapacity];
+		heap = (T[]) new Comparable[initialCapacity + 1];
 		size = 0;
 	}
 	
@@ -27,9 +26,12 @@ public class MaxHeap<T extends Comparable<? super T>> implements MaxPriorityQueu
 	/**
 	 * Creates a heap from an array by heapifying it.
 	 */
+	@SuppressWarnings("unchecked")
 	public MaxHeap(T[] array){
-		heap = Arrays.copyOf(array, array.length);
-		for(int root = heap.length / 2; root > 0; root--){
+		heap = (T[]) new Comparable[array.length + 1]; 
+		System.arraycopy(array, 0, heap, 1, array.length);
+		size = array.length;
+		for(int root = size / 2; root > 0; root--){
 			T rootElement = heap[root];
 			int child = 2 * root;
 			while(child <= size){
@@ -50,6 +52,10 @@ public class MaxHeap<T extends Comparable<? super T>> implements MaxPriorityQueu
 	}
 
 	@Override
+	/**
+	 * Remove and return the element with the highest priority in the queue.
+	 * Returns <code>null</code> if the heap is empty.
+	 */
 	public T removeMax() {
 		if(isEmpty())
 			return null;
@@ -91,6 +97,10 @@ public class MaxHeap<T extends Comparable<? super T>> implements MaxPriorityQueu
 	}
 
 	@Override
+	/**
+	 * Get the element with the highest priority in the heap without removing it.
+	 * Returns <code>null</code> if the heap is empty.
+	 */
 	public T peek() {
 		return size > 0 ? heap[1] : null;
 	}

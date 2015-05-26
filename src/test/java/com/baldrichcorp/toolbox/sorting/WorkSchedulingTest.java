@@ -1,4 +1,4 @@
-package com.baldrichcorp.algorithms.sort;
+package com.baldrichcorp.toolbox.sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.testng.annotations.Test;
 
-import com.baldrichcorp.algorithms.sort.WorkScheduling.DifferenceComparator;
-import com.baldrichcorp.algorithms.sort.WorkScheduling.Job;
-import com.baldrichcorp.algorithms.sort.WorkScheduling.RatioComparator;
+import com.baldrichcorp.toolbox.sorting.WorkScheduling.DifferenceComparator;
+import com.baldrichcorp.toolbox.sorting.WorkScheduling.Job;
+import com.baldrichcorp.toolbox.sorting.WorkScheduling.RatioComparator;
 
 public class WorkSchedulingTest {
 	

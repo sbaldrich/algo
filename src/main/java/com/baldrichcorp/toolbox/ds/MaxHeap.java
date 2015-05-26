@@ -1,4 +1,4 @@
-package com.baldrichcorp.algorithms.ds.heaps;
+package com.baldrichcorp.toolbox.ds;
 
 
 /**
@@ -6,7 +6,7 @@ package com.baldrichcorp.algorithms.ds.heaps;
  * 
  * @author sbaldrich
  */
-public class MaxHeap<T extends Comparable<? super T>> implements MaxPriorityQueue<T> {
+public class MaxHeap<T extends Comparable<? super T>> implements IMaxPriorityQueue<T> {
 
 	private T[] heap;
 	private int size;

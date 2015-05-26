@@ -1,4 +1,4 @@
-package com.baldrichcorp.algorithms.graphs;
+package com.baldrichcorp.toolbox.graphs;
 
 import static org.testng.Assert.*;
 
@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 import org.testng.annotations.Test;
+
+import com.baldrichcorp.toolbox.graphs.Dijkstra;
 
 public class DijkstraTest {
 	

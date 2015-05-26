@@ -1,10 +1,12 @@
-package com.baldrichcorp.algorithms.sort;
+package com.baldrichcorp.toolbox.sorting;
 
 import static org.testng.Assert.assertTrue;
 
 import java.util.Arrays;
 
 import org.testng.annotations.Test;
+
+import com.baldrichcorp.toolbox.sorting.MergeSort;
 public class MergeSortTest {
 
 	@Test

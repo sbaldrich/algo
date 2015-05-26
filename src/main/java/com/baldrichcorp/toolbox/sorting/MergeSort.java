@@ -1,4 +1,4 @@
-package com.baldrichcorp.algorithms.sort;
+package com.baldrichcorp.toolbox.sorting;
 
 /**
  * MergeSort algorithm => O(nlogn)

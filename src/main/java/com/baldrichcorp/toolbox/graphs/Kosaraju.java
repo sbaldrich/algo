@@ -1,4 +1,4 @@
-package com.baldrichcorp.algorithms.graphs;
+package com.baldrichcorp.toolbox.graphs;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.baldrichcorp.algorithms.ds.heaps;
+package com.baldrichcorp.toolbox.ds;
 
 import static org.testng.Assert.assertEquals;
 
@@ -6,6 +6,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 import org.testng.annotations.Test;
+
+import com.baldrichcorp.toolbox.ds.MaxHeap;
+import com.baldrichcorp.toolbox.ds.IMaxPriorityQueue;
 
 public class HeapTest {
 	
@@ -19,7 +22,7 @@ public class HeapTest {
 			sorted[i] = 1 + rand.nextInt(100);
 		unsorted = Arrays.copyOf(sorted, M);
 		Arrays.sort(sorted);
-		MaxPriorityQueue<Integer> heap = new MaxHeap<>(unsorted);
+		IMaxPriorityQueue<Integer> heap = new MaxHeap<>(unsorted);
 		for(int i = M - 1; i >= 0; i--)
 			unsorted[i] = heap.removeMax();
 		assertEquals(sorted,unsorted);
@@ -29,7 +32,7 @@ public class HeapTest {
 	public void putTest(){
 		Integer[] sorted = new Integer[M], heapSorted = new Integer[M];
 		Random rand = new Random();
-		MaxPriorityQueue<Integer> heap = new MaxHeap<>(M);
+		IMaxPriorityQueue<Integer> heap = new MaxHeap<>(M);
 		for(int i = 0; i < M; i++){
 			sorted[i] = 1 + rand.nextInt(100);
 			heap.put(sorted[i]);

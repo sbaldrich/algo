@@ -1,4 +1,4 @@
-package com.baldrichcorp.algorithms.graphs;
+package com.baldrichcorp.toolbox.graphs;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import org.testng.annotations.Test;
+
+import com.baldrichcorp.toolbox.graphs.Kosaraju;
 
 public class KosarajuTest {
 	

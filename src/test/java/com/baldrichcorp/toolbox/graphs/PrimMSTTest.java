@@ -1,8 +1,11 @@
-package com.baldrichcorp.algorithms.graphs;
+package com.baldrichcorp.toolbox.graphs;
 
 import java.util.Arrays;
 
 import org.testng.annotations.Test;
+
+import com.baldrichcorp.toolbox.graphs.PrimMST;
+
 import static org.testng.Assert.*;
 
 public class PrimMSTTest {

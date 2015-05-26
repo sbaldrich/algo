@@ -1,4 +1,4 @@
-package com.baldrichcorp.algorithms.sort;
+package com.baldrichcorp.toolbox.sorting;
 
 import java.nio.charset.Charset;
 import java.nio.file.Files;

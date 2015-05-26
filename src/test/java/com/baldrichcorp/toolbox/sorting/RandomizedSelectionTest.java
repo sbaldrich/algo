@@ -1,8 +1,11 @@
-package com.baldrichcorp.algorithms.sort;
+package com.baldrichcorp.toolbox.sorting;
 
 import java.util.Arrays;
 
 import org.testng.annotations.Test;
+
+import com.baldrichcorp.toolbox.sorting.RandomizedSelection;
+
 import static org.testng.Assert.assertEquals;
 
 public class RandomizedSelectionTest {

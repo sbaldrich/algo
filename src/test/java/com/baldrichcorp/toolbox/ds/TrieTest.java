@@ -16,7 +16,7 @@ public class TrieTest {
 	public void setupTrie(){
 		trie = new Trie();
 		for(String word : words){
-			trie.addWord(word);
+			trie.add(word);
 		}
 	}
 	
@@ -24,11 +24,18 @@ public class TrieTest {
 	public void countWords() {
 		Random random = new Random();
 		for(String word : words){
-			trie.addWord(word).addWord(word);
+			trie.add(word).add(word);
 		}
-		assertTrue(trie.find(words[random.nextInt(words.length)]) == 3);
+		for(int i = 0; i < 5; i++)
+			assertTrue(trie.find(words[random.nextInt(words.length)]) == 3);
 	}
 	
+	@Test
+	public void notExistingWordShouldNotBeFound(){
+		assertTrue(trie.find("notexisting") == 0);
+	}
+	
+	@Test
 	public void countPrefixes(){
 		assertTrue(trie.countPrefixes("alg") == 4);
 	}

@@ -12,12 +12,12 @@ import com.baldrichcorp.toolbox.graphs.Dijkstra;
 public class DijkstraTest {
 	
 	private static final String TEST_FILE = "dijkstraData.txt";
-	@Test
+	//@Test
 	public void fileExists(){
 		assertNotNull(getClass().getResource("/"+TEST_FILE), "Test file was not found.");
 	}
 	
-	@Test(dependsOnMethods="fileExists")
+	//@Test(dependsOnMethods="fileExists")
 	public void dijkstra() throws Exception{
 		Dijkstra d = new Dijkstra(201);
 		BufferedReader reader = new BufferedReader

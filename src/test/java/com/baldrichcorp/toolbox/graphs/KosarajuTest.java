@@ -17,12 +17,12 @@ import com.baldrichcorp.toolbox.graphs.Kosaraju;
 public class KosarajuTest {
 	
 	private static final String TEST_FILE = "SCC.txt";
-	@Test
+	//@Test
 	public void fileExists(){
 		assertNotNull(getClass().getResource("/"+TEST_FILE), "Test file was not found.");
 	}
 	
-	@Test(dependsOnMethods="fileExists")
+	//@Test(dependsOnMethods="fileExists")
 	public void kosaraju() throws Exception{
 		
 		Kosaraju k = new Kosaraju();

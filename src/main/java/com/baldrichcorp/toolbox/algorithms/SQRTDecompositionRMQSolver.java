@@ -11,16 +11,15 @@ import static java.lang.Math.*;
  * @author sbaldrich
  * 
  */
-public class SQRTDecompositionRMQSolver<T extends Comparable<? super T>> implements RMQSolver<T> {
+public class SQRTDecompositionRMQSolver<T extends Comparable<? super T>> extends RMQSolver<T> {
 
 	
-	private T elements[];
 	private int lookup[];
 	private int slice;
 	
 	
 	public SQRTDecompositionRMQSolver(final T[] input){
-		elements = input;
+		super(input);
 		/* Let s = sqrt(n) with n -> the length of the input array.
 		 * The lookup array is going to have ceil(s) elements so we 
 		 * can query in ~ O(s). To avoid wasting space, each slot in the

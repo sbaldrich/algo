@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 import org.testng.annotations.Test;
 
 
-public class RMQTest {
+public class SparseTableRMQSolverTest {
 	
 	private Integer[] ascIntegers = IntStream.range(1, 10).boxed().toArray(Integer[]::new);
 	private Integer[] descIntegers = IntStream.range(1, 10).map(x -> 10 - x).boxed().toArray(Integer[]::new);
@@ -17,7 +17,7 @@ public class RMQTest {
 	
 	@Test
 	public void orderedAscending(){
-		RMQSolver<Integer> solver = new SQRTDecompositionRMQSolver<Integer>(ascIntegers);
+		RMQSolver<Integer> solver = new SparseTableRMQSolver<>(ascIntegers);
 		assertEquals(ascIntegers[0], solver.query(0, 7));
 		assertEquals(ascIntegers[1], solver.query(1, 6));
 		assertEquals(ascIntegers[5], solver.query(5, 5));
@@ -25,7 +25,7 @@ public class RMQTest {
 	
 	@Test
 	public void orderedDescending(){
-		RMQSolver<Integer> solver = new SQRTDecompositionRMQSolver<Integer>(descIntegers);
+		RMQSolver<Integer> solver = new SparseTableRMQSolver<>(descIntegers);
 		assertEquals(descIntegers[7], solver.query(0, 7));
 		assertEquals(descIntegers[6], solver.query(1, 6));
 		assertEquals(descIntegers[5], solver.query(5, 5));
@@ -33,7 +33,7 @@ public class RMQTest {
 	
 	@Test
 	public void randomArray(){
-		RMQSolver<Integer> solver = new SQRTDecompositionRMQSolver<Integer>(randomIntegers);
+		RMQSolver<Integer> solver = new SparseTableRMQSolver<>(randomIntegers);
 		Random random = new Random();
 		Iterator<Integer> rand = random.ints(1000,0,randomIntegers.length).iterator();
 		for(int i = 0, l = rand.next(), r = rand.next(); i < 100; i++, l = rand.next(), r = rand.next()){

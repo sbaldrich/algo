@@ -1,8 +1,16 @@
 package com.baldrichcorp.toolbox.algorithms;
 
-public interface RMQSolver<T extends Comparable<? super T>> {
+public abstract class RMQSolver<T extends Comparable<? super T>> {
+	
+	//The input array. Is it necessary? IDK :P
+	T elements[];
+	
+	public RMQSolver(final T[] array){
+		this.elements = array;
+	} 
+	
 	/**
 	 * Return the minimum element in the range [l,r]
 	 */
-	T query(int l, int r);
+	protected abstract T query(int l, int r);
 }

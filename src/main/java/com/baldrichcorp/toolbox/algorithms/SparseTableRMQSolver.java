@@ -2,7 +2,7 @@ package com.baldrichcorp.toolbox.algorithms;
 
 /**
  * This implementation solves the RMQ problem by creating a lookup table M[i][j] where
- * M[i][j] = RMQ(i, i + 2 ^ (j-1)). It has a complexity of <O(nlg(n), O(1)>, which makes
+ * M[i][j] = RMQ(i, i + 2 ^ j - 1). It has a complexity of <O(nlg(n), O(1)>, which makes
  * it a pretty good choice for programming contests. The sparse table approach can be applied
  * to various problems, including a direct solution (i.e. not going through RMQ) to the LCA 
  * problem.

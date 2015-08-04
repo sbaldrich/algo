@@ -3,7 +3,7 @@ package com.baldrichcorp.toolbox.sorting;
 import java.util.Random;
 
 /**
- * Randomized Selection algorithm => O(logn)
+ * Randomized Selection algorithm => O(n)
  * 
  * A very cool recursive algorithm for finding order statistics in an unsorted array. It is based 
  * on the partition subroutine (the same as QuickSort). 

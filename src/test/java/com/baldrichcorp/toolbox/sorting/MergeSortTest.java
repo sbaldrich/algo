@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class MergeSortTest {

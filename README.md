@@ -4,7 +4,7 @@
 1. <a href="#what">What is this?</a>
 1. <a href="#purpose">Yeah, but why?</a>
 1. <a href="#collab">How can I help?</a>
-1. <a href="#disc">Disclaimer</a>
+1. <a href="#lic">Disclaimer</a>
 
 <a name="what"/>
 ## What is this? 
@@ -26,9 +26,6 @@ This code is open and free to use by anyone. If I wanted it to be private, I wou
 [Octocat](https://octodex.github.com/) as its guardian. If you find errors or want to contribute to
 the project, go ahead and contact me or issue a pull request.
 
-<a name="disc"/>
-## Disclaimer
-As said before, this code is free to use by anyone. These are just implementations of algorithms and
-data structures created by people I admire. While I do my best to ensure these implementations work
-correctly, I take no responsibility for any possible consecuence of their use.
-
+<a name="lic"/>
+## License
+MIT

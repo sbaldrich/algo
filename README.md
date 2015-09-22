@@ -4,7 +4,7 @@
 1. <a href="#what">What is this?</a>
 1. <a href="#purpose">Yeah, but why?</a>
 1. <a href="#collab">How can I help?</a>
-1. <a href="#lic">Disclaimer</a>
+1. <a href="#lic">License</a>
 
 <a name="what"/>
 ## What is this? 

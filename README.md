@@ -1,4 +1,5 @@
 # Toolbox (FLBN)
+[![Build Status](https://travis-ci.org/sbaldrich/toolbox-flbn.svg?branch=master)](https://travis-ci.org/sbaldrich/toolbox-flbn)
 
 1. <a href="#what">What is this?</a>
 1. <a href="#purpose">Yeah, but why?</a>

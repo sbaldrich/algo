@@ -3,6 +3,7 @@ package com.baldrichcorp.toolbox.sorting;
 import java.util.Collections;
 import java.util.Arrays;
 import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 
 public class Permutations {
@@ -68,5 +69,6 @@ public class Permutations {
   public static void main(String[] args) {
     heaps(11, new Integer[]{1,-1,4,5,6,1,2,6,1,10,11}, x -> xx++);
     System.out.println(xx);
+    Consumer<int[]> cons;
   }
 }

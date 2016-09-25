@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 /** QuickSort algorithm => O(nlogn)
  * 
- * Divide and conquer algorithm based on the Partition subroutine.
+ * Divide and conquer algorithm based on the partition subroutine.
  *
  * It basically chooses a pivot, stores it on the first position of the sub-array and "partitions"
  * the remainder of the array in a way such that all elements less than (or equal) to the pivot
@@ -19,7 +19,7 @@ public class QuickSort implements Sorter{
 
     private static final QuickSort INSTANCE = new QuickSort();
 
-    private QuickSort(){};
+    private QuickSort(){}
 
     public static QuickSort instance(){
         return INSTANCE;
@@ -32,7 +32,7 @@ public class QuickSort implements Sorter{
     }
 
 	private <T extends Comparable<? super T>> void quickSort(int l, int r, T[] array){
-		if(r<=l)
+		if(r <= l)
 			return;
 		//Encapsulate the choice of the pivot to make changing it a piece of cake
         pivot(l, r, array);
@@ -78,7 +78,7 @@ public class QuickSort implements Sorter{
 	private <T extends Comparable<? super T>> void swap(int x, int y, T[] array){
 		T z = array[x];
 		array[x] = array[y];
-		array[y] = z;	
+		array[y] = z;
 	}
 
     private void swap(int x, int y){

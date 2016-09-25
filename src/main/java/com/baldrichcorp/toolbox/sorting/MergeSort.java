@@ -15,7 +15,7 @@ public class MergeSort implements Sorter{
 
     private static final MergeSort INSTANCE = new MergeSort();
 
-    private MergeSort(){};
+    private MergeSort(){}
 
     public static MergeSort instance(){
         return INSTANCE;
@@ -32,7 +32,6 @@ public class MergeSort implements Sorter{
          * With a sufficiently small array, Insertion sort would be a better choice. I don't
          * use it only for educational purposes.
          */
-
         if(low >= high)
             return;
         int mid = (low + high) >>> 1;

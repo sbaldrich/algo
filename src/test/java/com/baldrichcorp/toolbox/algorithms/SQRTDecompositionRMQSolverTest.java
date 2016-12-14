@@ -1,13 +1,12 @@
 package com.baldrichcorp.toolbox.algorithms;
 
-import static org.testng.Assert.assertEquals;
+import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-import org.testng.annotations.Test;
-
+import static org.junit.Assert.assertEquals;
 
 public class SQRTDecompositionRMQSolverTest {
 	
@@ -22,7 +21,7 @@ public class SQRTDecompositionRMQSolverTest {
 		assertEquals(ascIntegers[1], solver.query(1, 6));
 		assertEquals(ascIntegers[5], solver.query(5, 5));
 	}
-	
+
 	@Test
 	public void orderedDescending(){
 		RMQSolver<Integer> solver = new SQRTDecompositionRMQSolver<>(descIntegers);

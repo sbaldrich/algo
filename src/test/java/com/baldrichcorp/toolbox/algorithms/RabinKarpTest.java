@@ -1,10 +1,13 @@
 package com.baldrichcorp.toolbox.algorithms;
 
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
-@Test
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 public class RabinKarpTest {
-	
+
+	@Test
 	public void simpleTest(){
 		String txt[] = {"abracadabrabracadabra", "aaaaaaaa", "hello", "loremimloremipsuloremipsumlorl"};
 		String pat[] = {"abracadabra", "aaaa", "ell", "loremipsum"};

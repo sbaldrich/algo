@@ -1,13 +1,13 @@
 package com.baldrichcorp.toolbox.algorithms;
 
-import static org.testng.Assert.assertEquals;
+
+import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-import org.testng.annotations.Test;
-
+import static org.junit.Assert.assertEquals;
 
 public class SparseTableRMQSolverTest {
 	

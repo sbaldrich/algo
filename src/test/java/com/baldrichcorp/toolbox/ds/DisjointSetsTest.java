@@ -1,11 +1,12 @@
 package com.baldrichcorp.toolbox.ds;
 
-import org.testng.annotations.Test;
-import static org.testng.Assert.*;
+import org.junit.Test;
 
-@Test
+import static org.junit.Assert.*;
+
 public class DisjointSetsTest {
-	
+
+	@Test
 	public void connectivityTest(){
 		DisjointSets ds = new DisjointSets(10);
 		ds.join(1, 2).join(3, 4).join(5, 6);
@@ -13,4 +14,6 @@ public class DisjointSetsTest {
 		ds.join(2, 3).join(4, 5);
 		assertTrue(ds.query(1, 6));
 	}
+
+
 }

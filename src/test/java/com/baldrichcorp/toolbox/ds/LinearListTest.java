@@ -1,12 +1,13 @@
 package com.baldrichcorp.toolbox.ds;
 
-import static org.testng.Assert.*;
+
+import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.Random;
 import java.util.UUID;
 
-import org.testng.annotations.Test;
+import static org.junit.Assert.*;
 
 public class LinearListTest {
 	@Test

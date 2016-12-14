@@ -1,14 +1,17 @@
 package com.baldrichcorp.toolbox.ds;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Random;
+import java.util.Set;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
-@Test
 public class BinarySearchTreeTest {
 
+    @Test
     public void removeTheRoot(){
         BinarySearchTree<Integer,String> bst = new BinarySearchTree<>();
         Random random = new Random();

@@ -1,17 +1,76 @@
 apply plugin: 'java'
+apply plugin: 'scala'
 apply plugin: 'idea'
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
 
 group = 'com.baldrichcorp'
-version = '1.0-SNAPSHOT'
+version = '2.0-SNAPSHOT'
 
 repositories {
-     mavenCentral()
+    mavenCentral()
+    mavenLocal()
+}
+
+ext {
+    libraries = [
+            junit: 'junit:junit:4.12',
+            scala : 'org.scala-lang:scala-library:2.11.8',
+            scala_test : 'org.scalatest:scalatest_2.11:3.0.1'
+    ]
+    failOnWarnings = false // Set to false to continue the build even with Xlint warnings and break my heart.
 }
 
 dependencies {
-    testCompile 'org.testng:testng:6.1.1'
+    compile libraries.scala
+
+    testCompile libraries.junit,
+                libraries.scala_test
 }
 
-test {
-    useTestNG()
+[compileJava, compileTestJava].each() {
+    it.options.compilerArgs += ["-Xlint:all"]
+    it.options.encoding = "UTF-8"
+    if (rootProject.hasProperty('failOnWarnings') && rootProject.failOnWarnings.toBoolean()) {
+        it.options.compilerArgs += ["-Werror"]
+    }
+}
+
+findbugs {
+    ignoreFailures = false
+    effort = "max"
+    reportsDir = file("$buildDir/reports/findbugs")
+    sourceSets = [sourceSets.main]
+}
+
+findbugsMain {
+    ignoreFailures = true // Set to true to continue the build even with FindBugs warnings and break my heart.
+    reports {
+        html.enabled = true
+        xml.enabled = false
+    }
+}
+
+pmdMain {
+    reports {
+        html.enabled = true
+        xml.enabled = false
+    }
+}
+
+pmd {
+    ignoreFailures = true
+    sourceSets = [sourceSets.main]
+    reportsDir = file("$project.buildDir/reports/pmd")
+    ruleSets = [
+            "java-basic",
+            "java-braces",
+            "java-empty",
+            "java-strings",
+            "java-sunsecure",
+            "java-imports",
+            "java-optimizations",
+            "java-unnecessary",
+            "java-unusedcode"
+    ]
 }

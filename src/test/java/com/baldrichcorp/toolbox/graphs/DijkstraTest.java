@@ -1,20 +1,19 @@
 package com.baldrichcorp.toolbox.graphs;
 
-import static org.testng.Assert.*;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import org.testng.annotations.Test;
 
-import com.baldrichcorp.toolbox.graphs.Dijkstra;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class DijkstraTest {
 	
 	private static final String TEST_FILE = "dijkstraData.txt";
 	//@Test
 	public void fileExists(){
-		assertNotNull(getClass().getResource("/"+TEST_FILE), "Test file was not found.");
+		assertNotNull(getClass().getResource("/"+TEST_FILE));
 	}
 	
 	//@Test(dependsOnMethods="fileExists")

@@ -1,12 +1,10 @@
 package com.baldrichcorp.toolbox.graphs;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
-import org.testng.annotations.Test;
-
-import com.baldrichcorp.toolbox.graphs.PrimMST;
-
-import static org.testng.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PrimMSTTest {
 	

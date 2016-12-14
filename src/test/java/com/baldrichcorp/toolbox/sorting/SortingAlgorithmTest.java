@@ -1,13 +1,13 @@
 package com.baldrichcorp.toolbox.sorting;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.fail;
+import static org.junit.Assert.assertTrue;
+
 
 public abstract class SortingAlgorithmTest {
     public static final int ARRAY_SIZE = 1000;

@@ -1,11 +1,12 @@
 package com.baldrichcorp.toolbox.ds;
 
-import static org.testng.Assert.*;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-@Test
+import static org.junit.Assert.*;
+
 public class HashTableTest {
 
+    @Test
     public void testPut(){
         HashTable<Integer, String> ht = new HashTable<>(7);
         assertTrue(ht.isEmpty());
@@ -20,4 +21,6 @@ public class HashTableTest {
         //puts this element on position 1
         ht.table[1].key.equals(7);
     }
+
+
 }

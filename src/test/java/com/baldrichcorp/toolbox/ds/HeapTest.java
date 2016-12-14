@@ -1,14 +1,11 @@
 package com.baldrichcorp.toolbox.ds;
 
-import static org.testng.Assert.assertEquals;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import org.testng.annotations.Test;
-
-import com.baldrichcorp.toolbox.ds.MaxHeap;
-import com.baldrichcorp.toolbox.ds.IMaxPriorityQueue;
+import static org.junit.Assert.assertArrayEquals;
 
 public class HeapTest {
 	
@@ -25,7 +22,7 @@ public class HeapTest {
 		IMaxPriorityQueue<Integer> heap = new MaxHeap<>(unsorted);
 		for(int i = M - 1; i >= 0; i--)
 			unsorted[i] = heap.removeMax();
-		assertEquals(sorted,unsorted);
+		assertArrayEquals(sorted,unsorted);
 	}
 	
 	@Test
@@ -40,7 +37,7 @@ public class HeapTest {
 		Arrays.sort(sorted);
 		for(int i = M - 1; i >= 0; i--)
 			heapSorted[i] = heap.removeMax();
-		assertEquals(sorted,heapSorted);
+		assertArrayEquals(sorted,heapSorted);
 	}
 	
 }

@@ -2,17 +2,17 @@ package com.baldrichcorp.toolbox.ds;
 
 import java.util.Random;
 
-import org.testng.annotations.*;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
-
+import static org.junit.Assert.assertTrue;
 
 public class TrieTest {
 	
 	private ITrie trie;
 	private String[] words = new String[]{"algorithm", "algorithms",
 											"algo", "banana", "arya", "algae"};
-	@BeforeMethod
+	@Before
 	public void setupTrie(){
 		trie = new Trie();
 		for(String word : words){
@@ -27,16 +27,16 @@ public class TrieTest {
 			trie.add(word).add(word);
 		}
 		for(int i = 0; i < 5; i++)
-			assertTrue(trie.find(words[random.nextInt(words.length)]) == 3);
+			assertTrue(trie.count(words[random.nextInt(words.length)]) == 3);
 	}
 	
 	@Test
 	public void notExistingWordShouldNotBeFound(){
-		assertTrue(trie.find("notexisting") == 0);
+		assertTrue(trie.count("notexisting") == 0);
 	}
 	
 	@Test
 	public void countPrefixes(){
-		assertTrue(trie.countPrefixes("alg") == 4);
+		assertTrue(trie.countByPrefix("alg") == 4);
 	}
 }

@@ -7,23 +7,23 @@ import java.util.List;
 /**
  * Implementation of the Knuth-Morris-Pratt algorithm. It defines a "Failure Function" that provides a
  * way to scan through a text T searching for pattern P in O(|T|)
- * 
+ *
  * @author sbaldrich
  *
  */
 
 public class KMP {
-	
+
 	private int F[]; //Failure function
-	private char[] pat; 
+	private char[] pat;
 	private int m; //The length of the pattern (not necessary but mñeh)
-	
-	public KMP(String pattern){
-		
+
+	public KMP(final String pattern){
+
 		pat = pattern.toCharArray();
 		m = pattern.length();
 		F = new int[m + 1];
-		
+
 		for(int i=2, j; i <= m; i++){
 			j = F[i-1];
 			//Try to expand the match
@@ -37,10 +37,10 @@ public class KMP {
 			}
 			//In the end, either we expand a proper prefix or we
 			//expand the empty string.
-			F[i] = pat[j] != pat[i-1] ? 0 : j + 1; 
+			F[i] = pat[j] != pat[i-1] ? 0 : j + 1;
 		}
 	}
-	
+
 	/**
 	 * Return a {@code List} containing the indexes where the pattern represented
 	 * by this {@code KMP} object appear.
@@ -73,5 +73,5 @@ public class KMP {
 		}
 		return matches;
 	}
-	
+
 }

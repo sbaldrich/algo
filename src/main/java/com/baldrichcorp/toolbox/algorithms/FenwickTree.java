@@ -1,7 +1,5 @@
 package com.baldrichcorp.toolbox.algorithms;
 
-import java.util.Arrays;
-
 /**
  * Implementation of the Fenwick Tree (A.K.A Binary Indexed Tree). It is a heap-like structure
  * on which each node contains the sum of its left subtree. Queries and updates are done by
@@ -50,11 +48,11 @@ Representing indexes as binary numbers, we get
                 100
                [ 7 ]
               /     \
-          011         110
+          010         110
          [ 3 ]       [ 6 ]
          /   \       /   \
-       001   110    101   111
-      [ 1 ] [ 3 ] [ 4 ]  [ 1 ]
+       001   011   101   111
+      [ 1 ] [ 3 ] [ 4 ] [ 1 ]
 
 Now, a very, very cool observation made by Fenwick is that if we unset the last 1 from the binary representation
 of the index of a node, we get the index of the next node in the path to the root that is accessed via a right child
@@ -74,14 +72,14 @@ structure that is the Fenwick Tree.
 public class FenwickTree {
 	int[] tree;
 	
-	public FenwickTree(int[] array){
+	public FenwickTree(final int[] array){
 		tree = new int[1 + array.length];
 		for(int i=1; i < tree.length; i++){
 			update(i, array[i-1]);
 		}
 	}
 	
-	public void update(int pos, int val){
+	public void update(int pos, final int val){
 		while(pos < tree.length){
 			tree[pos] += val;
 			pos += lb(pos);
@@ -101,7 +99,7 @@ public class FenwickTree {
 	/**
 	 * Lowbit function. Obtains the lowest bit that is set in an integer. 
 	 */
-	public static int lb(int i){
+	public static int lb(final int i){
 		return i & -i;
 	}
 	

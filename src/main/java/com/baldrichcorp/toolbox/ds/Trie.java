@@ -3,18 +3,10 @@ package com.baldrichcorp.toolbox.ds;
 public class Trie implements ITrie {
 
 	private static class Node{
-		/**
-		 * The character this node represents
-		 */
 		char ch;
-		/**
-		 * The number of words that end on this node
-		 */
-		int words;
-		/**
-		 * The number of words that start with the current prefix
-		 */
-		int prefix;
+		int wordsEndingHere;
+		int wordsStartingWithThisPrefix;
+
 		private Node edges[] = new Node[26];
 		
 		public Node at(char ch, boolean create){
@@ -28,8 +20,8 @@ public class Trie implements ITrie {
 		
 		public Node(char ch){
 			this.ch = ch;
-			words = 0;
-			prefix = 0;
+			wordsEndingHere = 0;
+			wordsStartingWithThisPrefix = 0;
 		}
 		
 		public enum Property{
@@ -51,10 +43,10 @@ public class Trie implements ITrie {
 	
 	private void add(Node node, final char[] word, int index){
 		if(index == word.length){
-			node.words++;
+			node.wordsEndingHere++;
 			return;
 		}
-		node.prefix++;
+		node.wordsStartingWithThisPrefix++;
 		add(node.at(word[index]), word, index+1);
 	}
 
@@ -62,15 +54,15 @@ public class Trie implements ITrie {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int countPrefixes(String word) {
-		return get(root, word.toCharArray(), 0, Node.Property.PREFIX);
+	public int countByPrefix(String prefix) {
+		return get(root, prefix.toCharArray(), 0, Node.Property.PREFIX);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int find(String word) {
+	public int count(String word) {
 		return get(root, word.toCharArray(), 0, Node.Property.WORDS);
 	}
 	
@@ -79,9 +71,9 @@ public class Trie implements ITrie {
 			//This kind of approach (using the same method to obtain different fields)
 			//could be improved using the Template pattern with reflection.
 			if(prop == Node.Property.WORDS)
-				return node.words;
+				return node.wordsEndingHere;
 			else if (prop == Node.Property.PREFIX)
-				return node.prefix;
+				return node.wordsStartingWithThisPrefix;
 		}
 		Node next = node.at(word[index], false);
 		if(next != null)

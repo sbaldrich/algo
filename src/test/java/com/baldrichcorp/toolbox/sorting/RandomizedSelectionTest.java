@@ -1,12 +1,10 @@
 package com.baldrichcorp.toolbox.sorting;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
-import org.testng.annotations.Test;
-
-import com.baldrichcorp.toolbox.sorting.RandomizedSelection;
-
-import static org.testng.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class RandomizedSelectionTest {
 	

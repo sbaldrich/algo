@@ -11,9 +11,10 @@
 # Mac
 .DS_Store
 
-# Maven
+# Gradle
 log/
 target/
 test-output
 .metadata
 build/
+.gradle
